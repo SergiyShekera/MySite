@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new students</title>
+    <style>
+        .p{
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<center><h1>Add new student</h1></center>
+<form action="http://localhost:8080/students/attadd" method="POST">
+    {% csrf_token %}
+    <label class="p">
+        Name: <input name="name" required>
+    </label>
+    <label class="p">
+        Mark: <input name="surname" type="number" required>
+    </label>
+     <label class="p">
+        Date: <input name="date" type="date" required>
+    </label>
+
+    <label class="p"><input type="submit" value="OK"></label>
+    <label class="p"><input type="reset" value="RESET"></label>
+
+</form>
+
+</body>

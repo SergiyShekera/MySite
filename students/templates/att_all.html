@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All attestats</title>
+</head>
+<body>
+{% for a in attestat %}
+    <p>Predmet: {{ a.predmet }}</p>
+    <p>Mark: {{ a.mark }}</p>
+    <p>Date: {{ a.date }}</p>
+    <br/>
+{% endfor %}
+</body>
+</html>

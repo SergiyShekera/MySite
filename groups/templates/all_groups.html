@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All groups</title>
+</head>
+<body>
+{% for group in groups %} 
+    <p>Name: {{ group.name }}</p>
+    <p>Start date: {{ group.start_date }}</p>
+    <p>Max student: {{ group.max_students }}</p>
+    <br/>
+{% endfor %}
+</body>
+</html>

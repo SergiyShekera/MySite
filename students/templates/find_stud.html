@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find student</title>
+    <style>
+        .p{
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<center><h1>Find student</h1></center>
+<form action="http://localhost:8080/students/find" method="POST">
+    {% csrf_token %}
+    <label class="p">
+        Name: <input name="name" required>
+    </label>
+
+    <label class="p">
+        Surname: <input name="surname" required>
+    </label>
+
+    <p> {{  find }}</p>
+    <p> {{  find.name }}</p>
+    <p>{{ find.surname }}</p>
+    <p>{{ find.group.name }}</p>
+    <p>{{ find.univ.name }}</p>
+
+    <label>
+        {{ find.attestat.predmet }}
+        {{ find.attestat.mark }}
+        {{ find.attestat.date}}
+    </label>
+
+    <label class="p"><input type="submit" value="OK"></label>
+    <label class="p"><input type="reset" value="RESET"></label>
+
+
+</form>
+
+</body>
+</html>

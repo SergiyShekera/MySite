@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new group</title>
+    <style>
+        .p{
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<center><h1>Add new group</h1></center>
+<form action="http://localhost:8080/groups/add" method="POST">
+    {% csrf_token %}
+    <label class="p">
+        Name: <input name="name" required>
+    </label>
+    <label class="p">
+        Start date: <input type="date" name="startDate" required>
+    </label>
+    <label class="p">
+        Max students: <input type="number" name="maxStudents" required>
+    </label>
+    <input type="submit" value="OK">
+    <input type="reset" value="RESET">
+</form>
+</body>
+</html>
