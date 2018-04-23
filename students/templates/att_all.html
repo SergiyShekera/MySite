@@ -9,7 +9,14 @@
     <p>Predmet: {{ a.predmet }}</p>
     <p>Mark: {{ a.mark }}</p>
     <p>Date: {{ a.date }}</p>
+    <p>Student: {{ a.student.name }}</p>
+    {% for at in attestat %}
+
+<p>Date: {{ at.student.name }}</p>
+
+        {% endfor %}
     <br/>
 {% endfor %}
+
 </body>
 </html>

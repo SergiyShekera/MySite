@@ -6,13 +6,28 @@
 </head>
 <body>
 
+<form action="http://localhost:8080/students/all" method="POST">
+     {% csrf_token %}
+<label class="p"><input type="submit" value="Sort by avg"></label>
+</form>
+<form action="http://localhost:8080/students/all" method="GET">
+     {% csrf_token %}
+<label class="p"><input type="submit" value="All"></label>
+</form>
+{% for f in ff %}
+
+    <p>{{ f.name}} {{ f.attestat__mark__avg}}</p>
+    </br>
+
+{% endfor %}
+
 {% for Student in students %}
 
     <p>Name: {{ Student.name }}</p>
     <p>Surname: {{ Student.surname }}</p>
     <p>Group: {{ Student.group.name }}</p>
     <p>Univ: {{ Student.univ.name }}</p>
-    <p>Attestat: {{ Student.attestat.predmet }}</p>
+
     </br>
 
 {% endfor %}
