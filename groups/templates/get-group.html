@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> {{group.id}} </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="d-block mx-auto"
+          style="width: 750px; border: 3px solid #564d4d; padding: 24px; background: whitesmoke;">
+    <center><h1>Grooup with id {{ group.id }}</h1></center>
+    <table class="table table-bordered table-dark" >
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Max students</th>
+          <th scope="col">Start Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ group.name }}</td>
+          <td>{{ group.max_students }}</td>
+          <td>{{ group.start_date   }}</td>
+        </tr>
+      </tbody>
+</div>
+</table>
+</body>
+</html>

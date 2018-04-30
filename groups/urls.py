@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from groups.views import all_groups, add_group
+from groups.views import all_groups, add_group, GetGroup
 
 
 urlpatterns = [
     path('all', all_groups),
-    path('add', add_group)
-    
+    path('add', add_group),
+    path('<int:id>', GetGroup.as_view())
 ]

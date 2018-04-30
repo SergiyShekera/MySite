@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
+from django.views.generic.base import TemplateView
+
 from django.views import View
 
 from groups.models import Group
@@ -27,7 +29,22 @@ def add_group(request):
 
     return redirect('/groups/all')
 
+class GetGroup(TemplateView):
+
+    template_name = "get-group.html"
+
+    def get_context_data(self, id, **kwargs):
+        context = super().get_context_data(**kwargs)
+        try:
+            context['group'] = Group.objects.get(id=id)
+        except Group.DoesNotExist:
+            return context
+        return context
+
+
+
 from django.views.generic.list import ListView
+
 
 # class GroupListView(ListView):
 #
