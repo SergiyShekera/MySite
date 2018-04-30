@@ -22,4 +22,4 @@ urlpatterns = [
     path('groups/', include('groups.urls')),
     path('students/', include('students.urls')),
     path('univ/', include('univ.urls'))
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
