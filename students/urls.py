@@ -16,11 +16,11 @@ Including another URLconf
 
 from django.urls import path
 from students.views import add_stud, all_stud, attestat_add, all_att, find_students
-
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
 
-    path('all', all_stud),
+    path('all', login_required(all_stud)),
     path('add', add_stud),
     path('attadd', attestat_add),
     path('attall', all_att),
